@@ -10,41 +10,13 @@ get_header();
 			<div class="content_left">
 				<div class="introduce_home">
 					<div class="container">
-						<h3><strong>VIETFOOD & BEVERAGE</strong> - PROPACK</h3>
-						<i><?php if(get_locale() == 'en_US') {?>INTRODUCE <?php }else{?> GIỚI THIỆU<?php }?></i>
+						<h3><strong>VIETNAM MEDI-PHARM </strong>EXPO</h3>
+						<i><?php if(get_locale() == 'en_US') {?>OVERVIEW <?php }else{?> GIỚI THIỆU<?php }?></i>
 						<div class="textwidget"> 
 							<?php echo get_the_excerpt(64); ?>
 							<a href="<?php echo get_permalink(64);?>"><?php if(get_locale() == 'en_US') {?> Read more<?php }else{?> Xem thêm<?php }?></a>
 						</div>
 						
-					</div>
-				</div>
-				<div class="product_cat">
-					<div class="container">
-						<h2 class="title_tg_top"><?php if(get_locale() == 'en_US') {?> Product Categories <?php }else{?> Danh mục sản phẩm<?php }?></h2>
-								<ul>
-								<?php 
-								$list_post_arg = array(
-									'posts_per_page' => 20,
-									'orderby' => 'post_date',
-									'order' => 'DESC',
-									'post_type' => 'post',
-									'post_status' => 'publish',
-									'cat' => 68
-								);
-								$list_post_q = new WP_Query();
-								$list_post_q->query($list_post_arg);
-								while($list_post_q->have_posts()): $list_post_q->the_post();
-									?>
-									<div class="list_post_item pw">
-										<?php  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );  ?>
-										<figure class="thumbnail" style="background:url('<?php echo $image[0]; ?>');"><a href="<?php the_permalink(); ?>"><?php //the_post_thumbnail();?></a> </figure>
-										<h2 class="post_title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
-									</div>
-									<?php
-								endwhile;
-								?>
-							</ul>
 					</div>
 				</div>
 				<div class="list_post_news">
@@ -58,7 +30,8 @@ get_header();
 							'orderby' => 'post_date',
 							'order' => 'DESC',
 							'post_type' => 'post',
-							'post_status' => 'publish'
+							'post_status' => 'publish',
+							'cat' => array(35,37)
 						);
 						$cmt_post_q = new WP_Query();
 						$cmt_post_q->query($arg_cmt_post_q);

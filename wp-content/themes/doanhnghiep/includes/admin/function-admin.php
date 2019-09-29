@@ -2,8 +2,6 @@
 add_action('admin_menu', 'ch_essentials_admin');
 function ch_essentials_admin() {
 
-	register_setting('zang-settings-header', 'day_header_en');
-	register_setting('zang-settings-header', 'day_header_vi');
 	register_setting('zang-settings-header', 'address_header_en');
 	register_setting('zang-settings-header', 'address_header_vi');
 	register_setting('zang-settings-socials', 'footer_fb');
@@ -18,8 +16,6 @@ function zang_custom_settings() {
 
 	/* Header Options Section */
 	add_settings_section('zang-header-options', 'Chỉnh sửa header','zang_header_options_callback','zang-settings-header' );
-	add_settings_field('day_en','Ngày diễn ra sự kiện', 'zang_day_header_en','zang-settings-header', 'zang-header-options');
-	add_settings_field('day_vi','', 'zang_day_header_vi','zang-settings-header', 'zang-header-options');
 	add_settings_field('address_header_en','Địa chỉ', 'zang_address_header_en','zang-settings-header', 'zang-header-options');
 	add_settings_field('address_header_vi','', 'zang_address_header_vi','zang-settings-header', 'zang-header-options');
 
@@ -44,14 +40,7 @@ function zang_commit_options_callback(){
 	echo '';
 }
 
-function zang_day_header_en(){
-	$day_header_en = esc_attr(get_option('day_header_en'));
-	echo '<input type="text" class="iptext_adm" name="day_header_en" value="'.$day_header_en.'" placeholder="en">';
-}
-function zang_day_header_vi(){
-	$day_header_vi = esc_attr(get_option('day_header_vi'));
-	echo '<input type="text" class="iptext_adm" name="day_header_vi" value="'.$day_header_vi.'" placeholder="vi">';
-}
+
 function zang_address_header_en(){
 	$address_header_en = esc_attr(get_option('address_header_en'));
 	echo '<input type="text" class="iptext_adm" name="address_header_en" value="'.$address_header_en.'" placeholder="en" ';

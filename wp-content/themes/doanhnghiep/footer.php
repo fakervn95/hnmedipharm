@@ -26,7 +26,7 @@
 						<?php if(get_locale() == 'en_US'){?>
 							<h4>HOSTS</h4>
 						<?php } ?>
-								<ul>
+						<ul>
 							<?php
 							$args = array(  
 								'post_type' => 'chutri',
@@ -102,7 +102,7 @@
 				</div>
 				<div class="col-sm-9">
 					<div class="dtnn">
-					    	<?php if(get_locale() == 'vi'){?>
+						<?php if(get_locale() == 'vi'){?>
 							<h4>ĐỐI TÁC NƯỚC NGOÀI & ĐỒNG TỔ CHỨC</h4>
 						<?php } ?>	
 						<?php if(get_locale() == 'en_US'){?>
@@ -187,8 +187,10 @@
 	}(document, 'script', 'facebook-jssdk'));      
 </script>
 <!-- END  MESSENGER -->
+
 <script src="<?php echo BASE_URL; ?>/js/wow.min.js"></script>
 <script src="<?php echo BASE_URL; ?>/js/slick.js"></script>
 <script src="<?php echo BASE_URL; ?>/js/custom.js"></script>
+
 </body>
 </html>

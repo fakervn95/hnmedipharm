@@ -73,7 +73,8 @@ if(have_posts()) :
 								'orderby' => 'post_date',
 								'order' => 'DESC',
 								'post_type' => 'post',
-								'post_status' => 'publish'
+								'post_status' => 'publish',
+								'cat' => array(35,37)
 							);
 							$list_post_q = new WP_Query();
 							$list_post_q->query($list_post_arg);

@@ -14,9 +14,12 @@
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
 	<!-- js -->
 	<script src="<?php echo BASE_URL; ?>/js/jquery.min.js"></script>
 	<script src="<?php echo BASE_URL; ?>/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 	<?php wp_head(); ?>
 	<meta property="fb:app_id" content="1953938748210615">
 	<meta property="fb:app_admins" content="1993613924220223">
@@ -97,6 +100,33 @@
 		</div>
 		<?php if(is_front_page() && !is_home()){ ?>
 			<?php if(get_locale() == 'en_US'){ echo do_shortcode('[metaslider id="672"]'); }else{ echo do_shortcode('[metaslider id="29"]');}?>
-			<?php  ?>
+					<div class="product_cat">
+					<div class="container">
+								<ul>
+								<?php 
+								$list_post_arg = array(
+									'posts_per_page' => 20,
+									'orderby' => 'post_date',
+									'order' => 'DESC',
+									'post_type' => 'post',
+									'post_status' => 'publish',
+									'cat' => 68
+								);
+								$list_post_q = new WP_Query();
+								$list_post_q->query($list_post_arg);
+								while($list_post_q->have_posts()): $list_post_q->the_post();
+									?>
+									<div class="list_post_item pw">
+										<?php  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );  ?>
+										<figure class="thumbnail" style="background:url('<?php echo $image[0]; ?>');"><a href="<?php the_permalink(); ?>"><?php //	the_post_thumbnail();?></a> </figure>
+										<h2 class="post_title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
+									</div>
+									<?php
+								endwhile;
+								?>
+							</ul>
+					</div>
+				</div>
 		<?php }?>
+
 	</header>

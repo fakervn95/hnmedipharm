@@ -17,19 +17,26 @@
  *
  * @package WordPress
  */
+
 // ** Thiết lập MySQL - Bạn có thể lấy các thông tin này từ host/server ** //
 /** Tên database MySQL */
-define('DB_NAME', 'elevator_expovn');
+define('DB_NAME', 'ten_database');
+
 /** Username của database */
-define('DB_USER', 'elevator_root');
+define('DB_USER', 'username');
+
 /** Mật khẩu của database */
-define('DB_PASSWORD', '%7oGB5Ulir.=');
+define('DB_PASSWORD', 'mat_khau');
+
 /** Hostname của database */
 define('DB_HOST', 'localhost');
+
 /** Database charset sử dụng để tạo bảng database. */
 define('DB_CHARSET', 'utf8');
+
 /** Kiểu database collate. Đừng thay đổi nếu không hiểu rõ. */
 define('DB_COLLATE', '');
+
 /**#@+
  * Khóa xác thực và salt.
  *
@@ -49,7 +56,9 @@ define('AUTH_SALT',        'khóa không trùng nhau');
 define('SECURE_AUTH_SALT', 'khóa không trùng nhau');
 define('LOGGED_IN_SALT',   'khóa không trùng nhau');
 define('NONCE_SALT',       'khóa không trùng nhau');
+
 /**#@-*/
+
 /**
  * Tiền tố cho bảng database.
  *
@@ -57,6 +66,7 @@ define('NONCE_SALT',       'khóa không trùng nhau');
  * Chỉ sử dụng số, ký tự và dấu gạch dưới!
  */
 $table_prefix  = 'wp_';
+
 /**
  * Dành cho developer: Chế độ debug.
  *
@@ -68,9 +78,12 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
+
 /* Đó là tất cả thiết lập, ngưng sửa từ phần này trở xuống. Chúc bạn viết blog vui vẻ. */
+
 /** Đường dẫn tuyệt đối đến thư mục cài đặt WordPress. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
+
 /** Thiết lập biến và include file. */
 require_once(ABSPATH . 'wp-settings.php');
