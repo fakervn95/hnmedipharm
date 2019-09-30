@@ -602,7 +602,7 @@ a img.aligncenter {
      float: none;
      height: 220px;
      background-repeat: no-repeat !important;
-     background-size: 80% !important;
+     background-size: cover !important;
      background-position: center center !important;
      overflow: hidden;
      border: 1px solid #ccc;
@@ -1169,7 +1169,7 @@ position: relative;
  ul.list_categories{
      border-bottom: 1px solid #298591;
      display: table;
-     margin: 0px auto 35px auto;
+     margin: 35px auto 35px auto;
 }
  ul.list_categories li{
      display: inline-block;
@@ -1853,6 +1853,9 @@ line-height: 23px;
 /* end page-template-page-template-lienhe */
 
 /* css rau*/
+.gallery-item{
+    padding:0px 5px;
+}
 .pharma_area  figure{
     display: inline-block;
 }
@@ -1872,6 +1875,7 @@ table{
 }
 .product_cat .list_post_item .thumbnail{
     height: 120px;
+    background-size: 80% !important;
 }   
 .product_cat .list_post_item .thumbnail img{
     position: absolute;
